@@ -12,16 +12,6 @@ java {
     }
 }
 
-toolchainManagement {
-    jvm {
-        javaRepositories {
-            repository("temurin") {
-                uri = uri("https://api.adoptium.net/v3/installer")
-            }
-        }
-    }
-}
-
 minecraft {
     mappings channel: 'official', version: '1.20.1'
     runs {
