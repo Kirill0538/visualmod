@@ -1,9 +1,16 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven {
-            name = "Forge"
-            url = "https://maven.minecraftforge.net"
-        }
+        mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net' }
     }
 }
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net' }
+    }
+}
+
+enableFeaturePreview('TYPESAFE_PROJECT_ACCESSORS')
