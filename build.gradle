@@ -9,7 +9,16 @@ version = '1.0'
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
-        vendor = JvmVendorSpec.ADOPTIUM
+    }
+}
+
+toolchainManagement {
+    jvm {
+        javaRepositories {
+            repository("temurin") {
+                uri = uri("https://api.adoptium.net/v3/installer")
+            }
+        }
     }
 }
 
