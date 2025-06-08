@@ -2,34 +2,27 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-group = 'com.example.visualmod'
+group = 'com.example'
 version = '1.0'
-archivesBaseName = 'visualmod'
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(8))
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.20.1'
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                visualmod {
-                    source sourceSets.main
-                }
-            }
         }
     }
 }
 
 repositories {
     mavenCentral()
-    maven { url = 'https://maven.minecraftforge.net' }
+    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
 }
